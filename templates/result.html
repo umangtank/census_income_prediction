@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Income</title>
+    </head>
+    <style>
+            body {
+        margin: 200px;
+        padding: 20px;
+        background-color:whitesmoke;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        background-clip: inherit;
+        background-image: url({{ url_for ('static',filename = '1.jfif') }});
+    }
+    .Umang{
+        background-color: green;
+        color: honeydew;
+        font-size: 20px;
+    }
+    td{
+        text-align: center;
+        padding: 10px;
+        color:green;
+    }
+    </style>
+    <body>
+        <table align="center">
+            <tr>
+                <td class="Umang">
+                    <h3>Census Income Prediction</h3>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {% if models == 0 %}
+                    <center><h1>your income is <spam><=50k$</span></h1></center>
+                    {% else %}
+                    <center><h1>your income is <spam>>50k$</span></h1></center>
+                    {% endif %}
+
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

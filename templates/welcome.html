@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+</head>
+<style>
+    body {
+        margin: 20px;
+        padding: 20px;
+        background-color:whitesmoke;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        background-clip: inherit;
+        background-image: url({{ url_for ('static',filename = 'white.jfif') }});
+    }
+
+    form {
+        margin: 20px;
+        padding-left: 20px;
+        align-content: center;
+    }
+    label{
+        text-align: center;
+        font-family: monospace;
+        font-size: 20px;
+    }
+    td{
+        text-align: center;
+        padding: 10px;
+        color:green;
+    }
+    select{
+        width: 280px;
+    }
+    input{
+        width: 280px;
+    }
+    .Umang{
+        background-color: green;
+        color: honeydew;
+    }
+
+</style>
+
+<body>
+
+    <form action="/submit" method='post'>
+        <table align="center">
+            <tr>
+                <td class="Umang" colspan="2">
+                    <h3>Census Income Prediction</h3>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="age">Age:</label><br>
+                    <input type="number" name="age" required><br>
+                </td>
+                <td>
+                    <label for="gain">Capital-gain:</label><br>
+                    <input type="number" name="capital_gain" required><br>
+                </td>
+                </tr>
+                <tr>
+                <td>
+                    <label for="loss">capital-loss:</label><br>
+                    <input type="number" name="capital_loss" required><br>
+                </td>
+                <td>
+                    <label for="education">number of education year:</label><br>
+                    <input type="number" name="education_num" required><br>
+                </td>
+                </tr>
+                
+                <tr>
+                <td>
+                    <label for="hours">Working hour/week:</label><br>
+                    <input type="number" name="hours" required><br>
+                </td>
+                <td>
+                    <label for="occupations">occupation:</label><br>
+                    <select name="occupations" id="occupations">
+                        <option value=" Adm-clerical"> Adm-clerical</option>
+                        <option value=" Armed-Forces"> Armed-Forces</option>
+                        <option value=" Craft-repair"> Craft-repair</option>
+                        <option value=" Exec-managerial"> Exec-managerial</option>
+                        <option value=" Farming-fishing"> Farming-fishing</option>
+                        <option value=" Handlers-cleaners"> Handlers-cleaners</option>
+                        <option value=" Machine-op-inspct"> Machine-op-inspct</option>
+                        <option value=" Other-service"> Other-service</option>
+                        <option value=" Priv-house-serv"> Priv-house-serv</option>
+                        <option value=" Prof-specialty"> Prof-specialty</option>
+                        <option value=" Protective-serv"> Protective-serv</option>
+                        <option value=" Sales"> Sales</option>
+                        <option value=" Tech-support"> Tech-support</option>
+                        <option value=" Transport-moving"> Transport-moving</option>
+                    </select><br>
+                </td>
+                </tr>
+                <tr>
+                <td>
+                    <label for="sexs">Sex:</label><br>
+                    <select name="sexs" id="sexs">
+                        <option value=" Male"> Male</option>
+                        <option value=" Female"> Female</option>
+                    </select><br>
+                </td>
+                <td>
+                    <label for="merital">merital-status:</label><br>
+                    <select name="meritals" id="merital">
+                        <option value=" Divorced"> Divorced</option>
+                        <option value=" Married-AF-spouse"> Married-AF-spouse</option>
+                        <option value=" Married-civ-spouse"> Married-civ-spouse</option>
+                        <option value=" Married-spouse-absent"> Married-spouse-absent</option>
+                        <option value=" Never-married"> Never-married</option>
+                        <option value=" Separated"> Separated</option>
+                        <option value=" Widowed"> Widowed</option>
+                    </select><br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="country">Native-country:</label><br>
+                    <select name="country" id="country">
+                        <option value=" Canada"> Canada</option>
+                        <option value=" China"> China</option>
+                        <option value=" Columbia"> Columbia</option>
+                        <option value=" Cuba"> Cuba</option>
+                        <option value=" Dominican-Republic"> Dominican-Republic</option>
+                        <option value=" Ecuador"> Ecuador</option>
+                        <option value=" El-Salvador"> El-Salvador</option>
+                        <option value=" England"> England</option>
+                        <option value=" France"> France</option>
+                        <option value=" Germany"> Germany</option>
+                        <option value=" Greece"> Greece</option>
+                        <option value=" Guatemala"> Guatemala</option>
+                        <option value=" Haiti"> Haiti</option>
+                        <option value=" India" selected> India</option>
+                        <option value=" Iran"> Iran</option>
+                        <option value=" Ireland"> Ireland</option>
+                        <option value=" Italy"> Italy</option>
+                        <option value=" Japan"> Japan</option>
+                        <option value=" Jamaica"> Jamaica</option>
+                        <option value=" Mexico"> Mexico</option>
+                        <option value=" Nicaragua"> Nicaragua</option>
+                        <option value=" Peru"> Peru</option>
+                        <option value=" Philippines"> Philippines</option>
+                        <option value=" Poland"> Poland</option>
+                        <option value=" Portugal"> Portugal</option>
+                        <option value=" Puerto-Rico"> Puerto-Rico</option>
+                        <option value=" South"> South</option>
+                        <option value=" Taiwan"> Taiwan</option>
+                        <option value=" United-States"> United-States</option>
+                        <option value=" Vietnam"> Vietnam</option>
+                        <option value=" other"> other</option>
+                    </select><br>
+                </td>
+                <td>
+                    <label for="races">race:</label><br>
+                    <select name="races" id="races">
+                        <option value=" Amer-Indian-Eskimo"> Amer-Indian-Eskimo</option>
+                        <option value=" Asian-Pac-Islander"> Asian-Pac-Islander</option>
+                        <option value=" Black"> Black</option>
+                        <option value=" White"> White</option>
+                        <option value=" Other"> Other</option>
+                    </select><br>
+                </td>
+                </tr>
+                <tr>
+                <td>
+                    <label for="works">work class:</label><br>
+                    <select name="works" id="works">
+                        <option value=" Federal-gov"> Federal-gov</option>
+                        <option value=" Local-gov"> Local-gov</option>
+                        <option value=" Private"> Private</option>
+                        <option value=" Self-emp-inc"> Self-emp-inc</option>
+                        <option value=" Self-emp-not-inc"> Self-emp-not-inc</option>
+                        <option value=" State-gov"> State-gov</option>
+                        <option value=" Without-pay"> Without-pay</option>
+                    </select><br><br>
+                </td>
+                <td>
+                    <label for="educations">education:</label><br>
+                    <select name="educations" id="educations">
+                        <option value=" 10th"> 10th</option>
+                        <option value=" 11th"> 11th</option>
+                        <option value=" 12th"> 12th</option>
+                        <option value=" 1st-4th"> 1st-4th</option>
+                        <option value=" 5th-6th"> 5th-6th</option>
+                        <option value=" 7th-8th"> 7th-8th</option>
+                        <option value="  9th"> 9th</option>
+                        <option value=" Assoc-acdm"> Assoc-acdm</option>
+                        <option value=" Assoc-voc"> Assoc-voc</option>
+                        <option value=" Bachelors"> Bachelors</option>
+                        <option value=" Doctorate"> Doctorate</option>
+                        <option value=" HS-grad"> HS-grad</option>
+                        <option value=" Masters"> Masters</option>
+                        <option value=" Preschool"> Preschool</option>
+                        <option value=" Prof-school"> Prof-school</option>
+                        <option value=" Some-college"> Some-college</option>
+                    </select><br><br>
+                </td>
+                </tr>
+                <tr>
+                <td>
+                    <label for="relations">relation:</label><br>
+                    <select name="relations" id="relations">
+                        <option value=" Husband"> Husband</option>
+                        <option value=" Not-in-family"> Not-in-family</option>
+                        <option value=" Other-relative"> Other-relative</option>
+                        <option value=" Own-child"> Own-child</option>
+                        <option value=" Unmarried"> Unmarried</option>
+                        <option value=" Wife"> Wife</option>
+                    </select><br><br>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button type="submit" class="btn btn-lg btn-success">Predict</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+<!-- 
+    {% if models == 0 %}
+    <center><h1>your income is <spam><=50k$</span></h1></center>
+    {% else %}
+    <center><h1>your income is <spam>>50k$</span></h1></center>
+    {% endif %} -->
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
