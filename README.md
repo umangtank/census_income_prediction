@@ -1,7 +1,6 @@
 
 # 👩🏻‍💻Census Income Prediction
 
-**[pred-census.herokuapp.com](https://pred-census.herokuapp.com/)**
 
 ![Home](/media/123.png)
 <!-- ![Predict](/media/231.png) -->
