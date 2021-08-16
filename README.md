@@ -6,7 +6,7 @@
 ![Home](/media/123.png)
 <!-- ![Predict](/media/231.png) -->
 
-- This repository represents " Census income prediction ".
+- This repository represents `Census income prediction` ML model.
 - With the help of this project we can predict whether a person has an income of more than 50K a year or not.
 ## Dataset
 
