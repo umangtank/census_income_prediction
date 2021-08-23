@@ -1,6 +1,7 @@
 from flask import Flask,render_template,request
 import pickle
 import numpy as np
+from flask_mysqldb import MySQL
 
 pkl_file = open('models\model.pkl','rb')
 model = pickle.load(open('models\model.pkl', 'rb'))
@@ -8,6 +9,14 @@ index_dict = pickle.load(pkl_file)
 
 
 app = Flask(__name__)
+
+app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_USER'] = 'root'
+app.config['MYSQL_PASSWORD'] = 'B_311747'
+app.config['MYSQL_DB'] = 'datascience'
+
+mysql = MySQL(app)
+
 @app.route('/')
 def welcome():
     return render_template('welcome.html')
@@ -41,6 +50,10 @@ def predict():
         meritals = request.form['meritals']
         relations = request.form['relations']
 
+        cur = mysql.connection.cursor()
+        cur.execute("INSERT INTO userinput(age, capital_gain, capital_loss, education_year,working_hours, occupation, sex, merital, country, race, work_class, education, relation) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)", (age, capital_gain, capital_loss, education_num, hours, occupations, sexs, meritals, country, races, works, educations, relations))
+        mysql.connection.commit()
+        cur.close()
 
         output = np.zeros(108)
         output[0] = age
