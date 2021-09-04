@@ -5,8 +5,20 @@
 ![Home](/media/123.png)
 <!-- ![Predict](/media/231.png) -->
 
+
+## Overview
+
 - This repository represents `Census income prediction` ML model.
 - With the help of this project we can predict whether a person has an income of more than 50K a year or not.
+
+## Installation
+
+```bash
+pip install -r requirements.txt
+```
+
+<br>
+
 ## Dataset
 
 - **Here's a brief version of what you'll find in the data file.** [Dataset](https://www.kaggle.com/overload10/adult-census-dataset)
@@ -27,8 +39,23 @@
 | `hours-per-week`| continuous |
 | `Native-country`| All countries |
 
+## Directory Tree 
+```
+├── static 
+│   ├── images
+├── templates
+│   ├── welcome.html
+|   ├── result.html
+├── Procfile
+├── README.md
+├── app.py
+├── Census_Income_Prediction.ipynb
+├── models
+├── requirements.txt
+```
+<br><br>
+## Technologies I used 💻
 
-
-
+![Home](/media/121.png)         ![Home](/media/223.png)          ![Home](/media/211.png)        ![Home](/media/212.png)          ![Home](/media/flask.png)
 
   
