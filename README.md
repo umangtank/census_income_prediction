@@ -55,7 +55,7 @@ pip install -r requirements.txt
 ```
 <br><br>
 ## Technologies I used 💻
-
-![Home](/media/121.png)         ![Home](/media/223.png)          ![Home](/media/211.png)        ![Home](/media/212.png)          ![Home](/media/flask.png)
+![](https://forthebadge.com/images/badges/made-with-python.svg)<br>
+![](/media/121.png)         ![](/media/223.png)          ![](/media/211.png)        ![](/media/212.png)          ![](/media/flask.png)
 
   
