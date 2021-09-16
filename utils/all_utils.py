@@ -16,7 +16,16 @@ def Pred(age, capital_gain, capital_loss, education_num, hours, occupations, sex
     output = np.zeros(108)
     output[0] = age
     output[2] = capital_gain
+    if output[2] == 0:
+        output[2]
+    else:
+        output[2] == np.log(output[2])
+
     output[3] = capital_loss
+    if output[3] == 0:
+        output[3] = 0
+    else:
+        output[3] == np.log(output[3])
     output[1] = education_num
     output[4] = hours
     
@@ -55,7 +64,7 @@ def Pred(age, capital_gain, capital_loss, education_num, hours, occupations, sex
 
     result_location = relations
     output[index_dict[str(relations)]] = 1
-    
+    # print(output)
     return output
 
 def Mysql(mysql,age, capital_gain, capital_loss, education_num, hours, occupations, sexs, meritals, country, races, works, educations, relations):
